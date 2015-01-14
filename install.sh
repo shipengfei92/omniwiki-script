@@ -32,8 +32,9 @@ tar xf icu4c-52_1-src.tgz
 cd icu/source
 mkdir -p /usr/local/icu
 ./configure --prefix=/usr/local/icu
-make && make install
 
 pecl install intl-3.0.0
+
+sed -i '/\[PHP\]/a extension=intl.so' /etc/php5/apache2/php.ini
 
 service apache2 restart
