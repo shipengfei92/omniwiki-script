@@ -4,6 +4,8 @@ sed -i 's/archive.ubuntu.com/ftp.sjtu.edu.cn/g'   /etc/apt/sources.list
 
 apt-get update
 apt-get install -y mysql-server
+service mysql restart
+
 apt-get install -y apache2 php5 phpmyadmin
 apt-get install -y wget git
 apt-get install -y gcc g++ make
