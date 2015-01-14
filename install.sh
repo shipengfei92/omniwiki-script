@@ -1,16 +1,14 @@
 #!/bin/bash
 
+sed -i 's/archive.ubuntu.com/ftp.sjtu.edu.cn/g'   /etc/apt/sources.list
+
 apt-get update
-apt-get install -y mysql-server 
-apt-get install -y apache2 php5 phpmyadmin 
+apt-get install -y mysql-server
+apt-get install -y apache2 php5 phpmyadmin
 apt-get install -y wget git
 apt-get install -y gcc g++ make
 apt-get install -y php-pear php5-dev
-apt-get install -y php-apc 
-
-pecl install intl-3.0.0 
-
-
+apt-get install -y php-apc
 
 
 dir=$(pwd)
@@ -33,7 +31,6 @@ cd icu/source
 mkdir -p /usr/local/icu
 ./configure --prefix=/usr/local/icu
 
-
-
+pecl install intl-3.0.0
 
 service apache2 restart
